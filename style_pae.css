@@ -1,0 +1,206 @@
+/* --- RESET E BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #3d3d3d;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* --- NAVEGAÇÃO --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #3d3d3d;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.navbar .logo span {
+    color: #0f6315; /* Verde PAE */
+    margin-left: 2px;
+}
+
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #0f6315;
+}
+
+/* --- HERO SECTION --- */
+.pae-hero {
+    padding: 100px 8%;
+    text-align: center;
+    background: radial-gradient(circle at top right, #4b4b4b 0%, #1a2a0a 50%);
+}
+
+.badge {
+    background: rgba(173, 255, 47, 0.1);
+    color: #0f6315;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.pae-hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.pae-hero h1 span {
+    color: #0f6315;
+}
+
+.pae-hero p {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #aaa;
+    font-size: 1.1rem;
+}
+
+/* --- BOTÕES --- */
+.btn-primary {
+    background: #0f6315;
+    color: #000;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #0f6315;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* --- GRID DE ATIVIDADES --- */
+.section-container {
+    padding: 80px 8%;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+}
+
+.underline {
+    width: 60px;
+    height: 4px;
+    background: #0f6315;
+    margin: 15px auto;
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.activity-card {
+    background: #181818;
+    padding: 40px;
+    border-radius: 12px;
+    transition: 0.3s;
+    border: 1px solid #222;
+}
+
+.activity-card:hover {
+    border-color: #0f6315;
+    transform: translateY(-5px);
+}
+
+.icon-circle {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.activity-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.activity-card p {
+    color: #999;
+    font-size: 0.95rem;
+}
+
+/* --- CTA BANNER --- */
+.cta-banner {
+    background: #181818;
+    margin: 40px 8%;
+    padding: 60px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #ADFF2F33;
+}
+
+.cta-banner h2 { margin-bottom: 10px; }
+.cta-banner p { margin-bottom: 30px; color: #888; }
+
+/* --- FOOTER --- */
+.footer {
+    text-align: center;
+    padding: 40px;
+    color: #555;
+    font-size: 0.8rem;
+    border-top: 1px solid #1a1a1a;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .btn-secondary { margin-left: 0; margin-top: 15px; display: block; }
+    .btn-primary { display: block; }
+    .pae-hero { padding-top: 60px; }
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin — NEEF-UA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+    <script>
+        /* Auth guard — runs before anything renders */
+        if (!sessionStorage.getItem('neef_admin')) {
+            window.location.replace('admin-login.html');
+        }
+    </script>
+</head>
+<body class="admin-body">
+
+    <!-- ═══ ADMIN HEADER ══════════════════════════════════ -->
+    <header class="admin-header">
+        <div class="admin-header-inner">
+            <div class="admin-header-left">
+                <a href="index.html" class="logo admin-logo">
+                    <span class="logo-main">NEEF</span><span class="logo-sub">–UA</span>
+                </a>
+                <span class="admin-breadcrumb-sep">/</span>
+                <span class="admin-breadcrumb">Painel de Administração</span>
+            </div>
+            <div class="admin-header-right">
+                <a href="index.html" class="btn-ghost admin-btn-sm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="m15 18-6-6 6-6"/></svg>
+                    Ver site
+                </a>
+                <button class="admin-logout-btn" id="logout-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                    Terminar sessão
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══ MAIN CONTENT ══════════════════════════════════ -->
+    <main class="admin-main">
+        <div class="admin-container">
+
+            <!-- Toolbar -->
+            <div class="admin-toolbar">
+                <div class="admin-toolbar-left">
+                    <h1 class="admin-page-title">Eventos</h1>
+                    <div class="admin-stats-chips">
+                        <span class="admin-stat-chip">
+                            <span id="stats-total">0</span> total
+                        </span>
+                        <span class="admin-stat-chip chip-upcoming">
+                            <span id="stats-upcoming">0</span> próximos
+                        </span>
+                        <span class="admin-stat-chip chip-past">
+                            <span id="stats-past">0</span> passados
+                        </span>
+                    </div>
+                </div>
+                <button class="btn-primary admin-add-btn" id="add-event-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 5v14M5 12h14"/></svg>
+                    Novo Evento
+                </button>
+            </div>
+
+            <!-- Filter tabs -->
+            <div class="admin-filter-tabs" role="tablist">
+                <button class="filter-tab active" data-filter="all" role="tab">Todos</button>
+                <button class="filter-tab" data-filter="upcoming" role="tab">Próximos</button>
+                <button class="filter-tab" data-filter="past" role="tab">Passados</button>
+            </div>
+
+            <!-- Events list -->
+            <div id="admin-events-list" class="admin-events-list">
+                <!-- rendered by admin.js -->
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ═══ FORM PANEL ════════════════════════════════════ -->
+    <!-- Overlay backdrop -->
+    <div class="panel-overlay" id="panel-overlay"></div>
+
+    <!-- Slide-in panel -->
+    <aside class="form-panel" id="event-form-panel" aria-label="Formulário de evento">
+        <div class="form-panel-header">
+            <h2 id="form-panel-title">Novo Evento</h2>
+            <button class="form-panel-close" id="form-panel-close" aria-label="Fechar painel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+        </div>
+
+        <div class="form-panel-body">
+            <form id="event-form" novalidate>
+
+                <div class="form-group">
+                    <label for="f-title">Título <span class="req">*</span></label>
+                    <input type="text" id="f-title" placeholder="Nome do evento" required>
+                </div>
+
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label for="f-date">Data <span class="req">*</span></label>
+                        <input type="date" id="f-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="f-time">Hora <span class="req">*</span></label>
+                        <input type="time" id="f-time" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="f-location">Local <span class="req">*</span></label>
+                    <input type="text" id="f-location" placeholder="Ex: Anfiteatro IV, DFis" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="f-category">Categoria</label>
+                    <select id="f-category">
+                        <option value="Palestra">Palestra</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="Visita">Visita</option>
+                        <option value="Convívio">Convívio</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="f-description">Descrição <span class="req">*</span></label>
+                    <textarea id="f-description" rows="4" placeholder="Descreve o evento em detalhe..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="f-image">URL da Imagem <span class="form-optional">(opcional)</span></label>
+                    <input type="url" id="f-image" placeholder="https://exemplo.com/imagem.jpg">
+                </div>
+
+                <div class="form-panel-actions">
+                    <button type="button" class="btn-ghost" id="form-cancel-btn">Cancelar</button>
+                    <button type="submit" class="btn-primary" id="form-submit-btn">Adicionar Evento</button>
+                </div>
+
+            </form>
+        </div>
+    </aside>
+
+    <!-- ═══ TOAST NOTIFICATION ════════════════════════════ -->
+    <div class="admin-toast" id="admin-toast" role="status" aria-live="polite"></div>
+
+    <script src="events.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

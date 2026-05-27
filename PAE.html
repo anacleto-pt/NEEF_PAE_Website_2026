@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAE — Para Além da Engenharia · NEEF-UA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pae.css">
+</head>
+<body class="pae-body">
+
+    <!-- NAVEGAÇÃO -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-main">NEEF</span><span class="logo-sub">–UA</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="index.html#sobre">Sobre</a>
+                <a href="index.html#cursos">Cursos</a>
+                <a href="index.html#eventos">Eventos</a>
+                <a href="#atividades">Atividades</a>
+                <a href="index.html#contacto" class="nav-cta">Contacto</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO PAE -->
+    <header class="pae-hero">
+        <canvas id="particle-canvas"></canvas>
+        <div class="pae-hero-glow"></div>
+        <div class="pae-hero-content">
+            <span class="pae-badge">
+                <span class="pae-badge-dot"></span>
+                Bem-estar · Cultura · Comunidade
+            </span>
+            <h1>Para Além<br><span class="pae-gradient">da Engenharia</span></h1>
+            <p>A engenharia é a nossa paixão — mas a vida é muito mais do que equações.<br>
+            Promovemos o equilíbrio entre o rigor académico e o bem-estar de todos.</p>
+            <div class="pae-hero-btns">
+                <a href="#atividades" class="btn-primary pae-btn">Ver Atividades</a>
+                <a href="index.html" class="btn-ghost">← Voltar ao NEEF</a>
+            </div>
+        </div>
+        <div class="pae-scroll-hint">
+            <span>scroll</span>
+            <div class="scroll-line pae-scroll-line"></div>
+        </div>
+    </header>
+
+    <!-- O QUE FAZEMOS -->
+    <section id="atividades" class="section pae-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label pae-label">// atividades de lazer</span>
+                <h2>Mais do que engenheiros.<br><span class="pae-accent">Somos pessoas.</span></h2>
+                <p>Desde desporto a cultura, passando por convívios inesquecíveis — há sempre algo para toda a gente no PAE.</p>
+            </div>
+
+            <div class="pae-activities-grid">
+                <div class="pae-card fade-in">
+                    <div class="pae-card-icon pae-icon-green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            <path d="M2 12h20"/>
+                        </svg>
+                    </div>
+                    <h3>Desporto</h3>
+                    <p>Torneios de futsal, voleibol, caminhadas na ria e muito mais. Manter o corpo ativo é tão importante quanto manter a mente a funcionar.</p>
+                    <ul class="pae-list">
+                        <li>Torneios de Futsal</li>
+                        <li>Voleibol &amp; Badminton</li>
+                        <li>Trail &amp; Caminhadas</li>
+                    </ul>
+                </div>
+
+                <div class="pae-card fade-in delay-1">
+                    <div class="pae-card-icon pae-icon-amber">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Convívio</h3>
+                    <p>Jantares de curso, sunsets na ria, noites de jogos e momentos espontâneos que criam amizades para a vida toda.</p>
+                    <ul class="pae-list">
+                        <li>Jantares de Curso</li>
+                        <li>Sunsets na Ria</li>
+                        <li>Noites de Jogos</li>
+                    </ul>
+                </div>
+
+                <div class="pae-card fade-in delay-2">
+                    <div class="pae-card-icon pae-icon-purple">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/>
+                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                            <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/>
+                            <path d="M2 7h20"/>
+                            <path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"/>
+                        </svg>
+                    </div>
+                    <h3>Cultura</h3>
+                    <p>Visitas culturais, idas ao teatro e ao cinema, visitas a museus e experiências que ampliam os nossos horizontes para lá das equações.</p>
+                    <ul class="pae-list">
+                        <li>Teatro &amp; Cinema</li>
+                        <li>Visitas Culturais</li>
+                        <li>Museus &amp; Exposições</li>
+                    </ul>
+                </div>
+
+                <div class="pae-card fade-in delay-3">
+                    <div class="pae-card-icon pae-icon-blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 20h9"/>
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                        </svg>
+                    </div>
+                    <h3>Soft Skills</h3>
+                    <p>Comunicação, liderança, gestão de tempo e inteligência emocional — as competências que fazem a diferença na carreira e na vida.</p>
+                    <ul class="pae-list">
+                        <li>Workshops de Comunicação</li>
+                        <li>Liderança &amp; Gestão</li>
+                        <li>Bem-estar Mental</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA / MOMENTOS -->
+    <section class="pae-moments section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label pae-label">// os nossos momentos</span>
+                <h2>Memórias que <span class="pae-accent">ficam para sempre</span></h2>
+            </div>
+            <div class="moments-grid">
+                <div class="moment-card moment-large fade-in">
+                    <div class="moment-img moment-img-1"></div>
+                    <div class="moment-overlay">
+                        <span>Jantar de Curso 2025</span>
+                    </div>
+                </div>
+                <div class="moment-card fade-in delay-1">
+                    <div class="moment-img moment-img-2"></div>
+                    <div class="moment-overlay">
+                        <span>Torneio de Futsal</span>
+                    </div>
+                </div>
+                <div class="moment-card fade-in delay-2">
+                    <div class="moment-img moment-img-3"></div>
+                    <div class="moment-overlay">
+                        <span>Sunset na Ria</span>
+                    </div>
+                </div>
+                <div class="moment-card fade-in delay-1">
+                    <div class="moment-img moment-img-4"></div>
+                    <div class="moment-overlay">
+                        <span>Workshop de Liderança</span>
+                    </div>
+                </div>
+                <div class="moment-card fade-in delay-2">
+                    <div class="moment-img moment-img-5"></div>
+                    <div class="moment-overlay">
+                        <span>Visita Cultural</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="pae-cta-section section">
+        <div class="container">
+            <div class="pae-cta-box fade-in">
+                <div class="pae-cta-glow"></div>
+                <span class="section-label pae-label" style="text-align:center">// junta-te a nós</span>
+                <h2>Queres participar<br>ou <span class="pae-accent">sugerir algo?</span></h2>
+                <p>Estamos sempre abertos a novas ideias. Se tens um projeto, uma atividade ou só queres dar uma mão — fala connosco.</p>
+                <div class="pae-cta-btns">
+                    <a href="https://www.instagram.com/neef_aauav/" class="btn-primary pae-btn" target="_blank" rel="noopener">Fala connosco no Instagram</a>
+                    <a href="index.html#contacto" class="btn-ghost">Formulário de Contacto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo footer-logo">
+                        <span class="logo-main">NEEF</span><span class="logo-sub">–UA</span>
+                    </div>
+                    <p>Núcleo de Estudantes de Engenharia Física da Universidade de Aveiro.</p>
+                    <p class="footer-sub">Associado à AAUAv</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Navegação</h5>
+                    <a href="index.html#sobre">Sobre o NEEF</a>
+                    <a href="index.html#cursos">Cursos</a>
+                    <a href="index.html#eventos">Eventos</a>
+                    <a href="index.html#equipa">Equipa</a>
+                </div>
+                <div class="footer-col">
+                    <h5>PAE</h5>
+                    <a href="#atividades">Atividades</a>
+                    <a href="#">Desporto</a>
+                    <a href="#">Convívio</a>
+                    <a href="#">Cultura</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Redes Sociais</h5>
+                    <a href="https://www.instagram.com/neef_aauav/" target="_blank" rel="noopener">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Facebook</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 NEEF-UA · Todos os direitos reservados</p>
+                <p class="footer-credit">Feito com <span class="heart">♥</span> pelos estudantes de Engenharia Física</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <script src="main.js"></script>
+</body>
+</html>
